@@ -1,0 +1,119 @@
+@font-face {
+    font-family: 'noah-triallight';
+    src: url('noah-trial-rg-webfont.woff2') format('woff2');
+        //  ,url('noah-trial-rg-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    font-family: 'WebFont', sans-serif;
+    // background-color: rgb(221, 162, 51);
+    overflow-x: hidden;
+    background-color: #ffc600;
+}
+
+h3 {
+    font-size: 2rem;
+}
+
+form {
+    position: relative;
+}
+
+.container {
+    height: 90vh;
+    margin-top: auto;
+}
+
+.current-city {
+    color: rgba($color: #ffffff, $alpha: .6);
+    font-size: .75em;
+    text-align: right;
+    padding-right: 1rem;
+    font-style: italic;
+
+    #current-city {
+        color: rgba($color: #D31027, $alpha: .8);
+    }
+}
+
+.search-box {
+    width: 400px; // 25rem
+    border: .5rem solid rgba($color: #f0f0f0, $alpha: 1.0);
+    border-radius: 4px;
+    background-color: rgba($color: rgb(255, 255, 255), $alpha: 1.0);
+    padding: .5rem;
+    text-align: center;
+    font-size: 1.6rem;
+    color: black;
+    outline: none;
+
+    &::placeholder {
+        color: rgba($color: #b4b4b4, $alpha: 1.0);
+        
+    }
+}
+
+.suggestions {
+    position: absolute;
+    width: 100%;
+    top: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-rows: auto;
+    border-radius: 4px;
+    overflow-y: auto;
+    max-height: 75vh;
+
+    .row {
+        display: flex;
+        padding: 1.2rem 1rem;
+        background-image: linear-gradient(#f3f3f3, #e7e7e7);
+        color: rgb(107, 111, 116);
+        
+        &:hover {
+            filter: brightness(108%)
+        }
+    }
+
+    .hl {
+        background-color: gold;
+    }
+
+    .nearest {
+        .name:first-child::after {
+            --c: rgb(110, 182, 3);
+            content: 'Nearest';
+            font-size: .7rem;
+            color: var(--c);
+            margin-left: .4rem;
+            // border: 1px solid rgb(228, 108, 108);
+            border: 1px solid var(--c);
+            border-radius: 3px;
+            padding: 0 2px;
+        }
+    }
+}
+
+.name:last-child {
+    display: block;
+    margin-left:  auto;
+}
+
+
+
